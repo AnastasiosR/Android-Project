@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">L2Store</string>
+    <string-array name="items">
+        <item>Adena x10</item>
+        <item>Adena x20</item>
+        <item>Adena x30</item>
+        <item>Adena x40</item>
+        <item>Adena x50</item>
+        <item>Adena x60</item>
+        <item>Adena x70</item>
+        <item>Adena x80</item>
+        <item>Adena x90</item>
+        <item>Adena x100</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Receive 10 adena</item>
+        <item>Receive 20 adena</item>
+        <item>Receive 30 adena</item>
+        <item>Receive 40 adena</item>
+        <item>Receive 50 adena</item>
+        <item>Receive 60 adena</item>
+        <item>Receive 70 adena</item>
+        <item>Receive 80 adena</item>
+        <item>Receive 90 adena</item>
+        <item>Receive 100 adena</item>
+
+    </string-array>
 </resources>
