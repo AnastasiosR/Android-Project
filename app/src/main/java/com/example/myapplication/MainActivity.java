@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+
+    }
+
+    public void writeUserData(FirebaseUser user){
+
     }
 
     private void updateUI(FirebaseUser currentUser) {

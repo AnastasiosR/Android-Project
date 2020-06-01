@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.MyAdapter;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -27,13 +28,10 @@ public class Homepage extends AppCompatActivity {
         //get strings resources from custom dataset(arrays in values/styles.xml)
         s1 = getResources().getStringArray(R.array.items);
         s2 = getResources().getStringArray(R.array.description);
+        //final String[] status = {findViewById(R.id.selectedStatus).toString()};
 
-        MyAdapter myAdapter = new MyAdapter(this,s1,s2,images);
+        MyAdapter myAdapter = new MyAdapter(this, s1, s2, images);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        //button listener
-        
     }
-
 }
