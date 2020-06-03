@@ -36,13 +36,13 @@ public class Homepage extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //intent to next screen here
-                startActivity(new Intent(Homepage.this,cart.class));
-            }
-        });
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //intent to next screen here
+//                startActivity(new Intent(Homepage.this,cart.class));
+//            }
+//        });
     }
 
 
