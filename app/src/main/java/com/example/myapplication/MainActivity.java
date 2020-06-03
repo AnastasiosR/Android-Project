@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         String email = emailtxtBox.getText().toString();
         String password = passwordtxtBox.getText().toString();
-    mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
     }
 
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+     //i choose the email cause it's easier
     private void createUserWithEmail(){
         final TextView status = findViewById(R.id.status);
         final String status1 = status.getText().toString();
@@ -153,10 +153,12 @@ public class MainActivity extends AppCompatActivity {
         signIn();
         TextView status = findViewById(R.id.status);
         String status1 = status.getText().toString();
-        status.setText("Button Clicked!");
+        status.setText("Loging in..");
     }
 
     public void registerButtonClicked(View view) {
+        TextView status = findViewById(R.id.status);
+        status.setText("Registered!");
         createUserWithEmail();
 
     }

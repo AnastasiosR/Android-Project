@@ -8,21 +8,21 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="464dp"
-        android:layout_marginEnd="224dp"
-        android:text="Login"
+        android:layout_marginTop="472dp"
+        android:layout_marginEnd="260dp"
         android:onClick="loginButtonClicked"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/emailTextBox"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="97dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginEnd="97dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="textEmailAddress"
@@ -33,10 +33,10 @@
 
     <EditText
         android:id="@+id/passwordTextBox"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="97dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginEnd="97dp"
         android:layout_marginBottom="60dp"
         android:ems="10"
         android:inputType="textPassword"
@@ -47,22 +47,24 @@
 
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="147dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="62dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="1dp"
         android:onClick="registerButtonClicked"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/loginButton"
         app:layout_constraintTop_toBottomOf="@+id/passwordTextBox" />
 
     <ImageView
         android:id="@+id/entryImage"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="151dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="151dp"
         android:layout_marginBottom="98dp"
         app:layout_constraintBottom_toTopOf="@+id/emailTextBox"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,11 +74,11 @@
 
     <TextView
         android:id="@+id/label1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="141dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="142dp"
+        android:layout_marginEnd="141dp"
         android:text="Enter Email Address"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +88,7 @@
 
     <TextView
         android:id="@+id/label2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
         android:layout_marginTop="13dp"
@@ -99,11 +101,11 @@
 
     <TextView
         android:id="@+id/status"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="13dp"
-        android:layout_marginEnd="337dp"
+        android:layout_marginEnd="15dp"
         android:text="Status"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

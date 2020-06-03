@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.MyAdapter;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,5 +35,15 @@ public class Homepage extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter(this, s1, s2, images);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //intent to next screen here
+                startActivity(new Intent(Homepage.this,cart.class));
+            }
+        });
     }
+
+
 }
