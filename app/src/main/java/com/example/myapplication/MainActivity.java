@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG ="" ;
     //Initialize firebaseAuth
      public FirebaseAuth mAuth;
-
+    private View rootView;
 
 
     @Override
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         String email = emailtxtBox.getText().toString();
         String password = passwordtxtBox.getText().toString();
         mAuth = FirebaseAuth.getInstance();
+
+        rootView = findViewById(android.R.id.content).getRootView();
     }
 
 
@@ -105,6 +108,16 @@ public class MainActivity extends AppCompatActivity {
      final TextView status = findViewById(R.id.status);
      String status2 = status.getText().toString();
      String password = passwordtxtBox.getText().toString();
+     String message;
+
+
+     if(emailtxtBox.getText().toString().isEmpty()){
+        message = "Email is mandatory";
+        Snackbar.make(rootView, message, Snackbar.LENGTH_LONG).show();
+        emailtxtBox.requestFocus();
+        return;
+     }
+
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -162,4 +175,5 @@ public class MainActivity extends AppCompatActivity {
         createUserWithEmail();
 
     }
+
 }//end of Activity

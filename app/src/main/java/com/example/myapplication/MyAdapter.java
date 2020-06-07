@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     String data1[],data2[];
     int images[];
     Context context;
+    OnCurrencyListener onCurrencyListener;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -35,11 +37,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(Context ct,String s1[],String s2[], int img[]){
-        context = ct;
-        data1 = s1;
-        data2 = s2;
-        images = img;
+    public MyAdapter(Context ct,String s1[],String s2[], int img[], OnCurrencyListener onCurrencyListener){
+        this.context = ct;
+        this.data1 = s1;
+        this.data2 = s2;
+        this.images = img;
+        this.onCurrencyListener = onCurrencyListener;
     }
 
 
@@ -54,7 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     // Replace the contents of a view (invoked by the layout manager)
 
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
 
         holder.myText1.setText(data1[position]);
         holder.myText2.setText(data2[position]);
@@ -63,6 +66,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void onClick(View v) {
                 //dosomething
+                Log.i("ABC","WE CLICKED THE BUTTON" + " " + position );
+                onCurrencyListener.onCurrencyClicked(data1[position]);
             }
         });
 
