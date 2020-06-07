@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,13 +23,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public  class MyViewHolder extends RecyclerView.ViewHolder {
         TextView myText1,myText2;
         ImageView myImage;
-
+        Button button;
 
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
             myText1 = itemView.findViewById(R.id.titleTextView);
             myText2 = itemView.findViewById(R.id.descTextView);
             myImage = itemView.findViewById(R.id.myImageView);
+            button  = itemView.findViewById(R.id.selectedItem);
         }
     }
 
@@ -57,6 +59,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.myText1.setText(data1[position]);
         holder.myText2.setText(data2[position]);
         holder.myImage.setImageResource(images[position]);
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //dosomething
+            }
+        });
+
 
 
     }
