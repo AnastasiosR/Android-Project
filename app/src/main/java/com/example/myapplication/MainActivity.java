@@ -20,6 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.*;
+import android.content.DialogInterface;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         rootView = findViewById(android.R.id.content).getRootView();
+
+        email = "tasoscat@gmail.com";
+        password = "123456";
     }
 
 
@@ -68,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
     private void createUserWithEmail(){
         final TextView status = findViewById(R.id.status);
         final String status1 = status.getText().toString();
-        EditText emailtxtBox = findViewById(R.id.emailTextBox);
-        String email = emailtxtBox.getText().toString();
+        final EditText emailtxtBox = findViewById(R.id.emailTextBox);
+        final String email = emailtxtBox.getText().toString();
         EditText passwordtxtBox = findViewById(R.id.passwordTextBox);
-        String password = passwordtxtBox.getText().toString();
+        final String password = passwordtxtBox.getText().toString();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     private static final String TAG ="" ;
@@ -90,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                            if(email.isEmpty() || password.isEmpty())
+                            {
+                                status.setText("Email or password cant be null");
+                            }
+                            else
                             status.setText("Something went wrong");
                             updateUI(null);
                         }
@@ -103,8 +112,10 @@ public class MainActivity extends AppCompatActivity {
  
  private void signIn(){
      EditText emailtxtBox = findViewById(R.id.emailTextBox);
+     emailtxtBox.setText("tasoscat@gmail.com");
      String email = emailtxtBox.getText().toString();
      EditText passwordtxtBox = findViewById(R.id.passwordTextBox);
+     passwordtxtBox.setText("123456");
      final TextView status = findViewById(R.id.status);
      String status2 = status.getText().toString();
      String password = passwordtxtBox.getText().toString();
@@ -165,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
     public void loginButtonClicked(View view) {
         signIn();
         TextView status = findViewById(R.id.status);
-        String status1 = status.getText().toString();
         status.setText("Loging in..");
     }
 

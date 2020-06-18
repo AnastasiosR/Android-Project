@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.myapplication.Homepage;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+
+
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>  {
 
     String data1[],data2[];
     int images[];
@@ -68,16 +73,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 //dosomething
                 Log.i("ABC","WE CLICKED THE BUTTON" + " " + position );
                 onCurrencyListener.onCurrencyClicked(data1[position]);
+
             }
         });
-
-
-
     }
 
+
+    private void goToNextActivity(){
+        Intent intent;
+
+    }
     // Return the size of your dataset (invoked by the layout manager)
 
     public int getItemCount() {
         return data1.length;
     }
-}
+
+
+
+} //end of class

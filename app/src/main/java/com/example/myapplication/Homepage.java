@@ -51,10 +51,13 @@ public class Homepage extends AppCompatActivity implements OnCurrencyListener{
 
     @Override
     public void onCurrencyClicked(String a) {
-        //call your activity
-        //TODO: call new activity
+        //call your activit
         Log.i("ABC", a);
-        Snackbar.make(rootView, "TEST", Snackbar.LENGTH_LONG).show();
+        String selectedAdena = a;
+        Snackbar.make(rootView, "Item Added" + selectedAdena, Snackbar.LENGTH_LONG).show();
+        Intent intent = new Intent(this, cart.class);
+        intent.putExtra("key",selectedAdena);
+        startActivity(intent);
     }
 
 }
