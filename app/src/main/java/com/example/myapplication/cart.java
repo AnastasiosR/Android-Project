@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -41,5 +42,11 @@ Context context;
         }
 
 
+    }
+
+    public void checkoutClicked(View view) {
+        TextView item1 = findViewById(R.id.item1);
+        Intent intent = new Intent(this, checkout.class);
+        startActivity(intent);
     }
 }//end of class

@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/duckduckgo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cart"/>
-        <activity android:name=".Homepage"></activity>
+        <activity android:name=".checkout"></activity>
+        <activity android:name=".cart" />
+        <activity android:name=".Homepage" />
         <activity android:name=".EmailPasswordActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
